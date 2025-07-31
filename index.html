@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+</head>
+<body>
+  <div class="header">
+    <img src="/assets/images/logo.svg" alt="logo">
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <img src="/assets/images/icon-sun.svg" alt="theme">
+    </button>
+  </div>
+  <div class="header2">
+    <h1>Extensions List</h1>
+    <div class="filters">
+      <button class="active">All</button>
+      <button>Active</button>
+      <button>Inactive</button>
+    </div>
+  </div>
+
+  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+
+  <ul class="extensions-list" id="extensions-list"></ul>
+  <script src="script.js"></script>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

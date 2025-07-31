@@ -1,0 +1,263 @@
+/* Import custom fonts */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./assets/fonts/static/NotoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./assets/fonts/static/NotoSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./assets/fonts/static/NotoSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./assets/fonts/static/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./assets/fonts/static/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans', 'Segoe UI', Arial, sans-serif;
+  background: radial-gradient(ellipse at top left, #09153e 60%, #16161a 100%);
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: hsl(225, 23%, 24%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  background: hsl(226, 11%, 37%);
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Secondary Header */
+.header2 {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: row;
+  margin-top: 50px;
+}
+
+/* Filter Buttons */
+.filters button {
+  background: hsl(226, 11%, 37%);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.filters button:hover {
+  background: hsl(226, 11%, 47%);
+}
+.filters button.active {
+  background: hsl(3, 71%, 56%);
+  color: #000000;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 22px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: hsl(226, 11%, 37%);
+  border-radius: 12px;
+  border: 1.5px solid #393e6c;
+  transition: background 0.2s, border 0.2s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.switch input:checked + .slider {
+  background-color: #e63946;
+  border-color: #e63946;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+/* Extension Grid */
+.extensions-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 35px;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 10px;
+  justify-items: stretch;
+}
+.extension {
+  background: hsl(225, 23%, 24%);
+  border-radius: 15px;
+  padding: 20px;
+  display: grid;
+}
+
+/* Remove Button */
+.remove-btn {
+  background: hsl(225, 23%, 24%);
+  color: #fff;
+  border: 1px solid #464d85;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Light Mode Overrides */
+body.light {
+  background: hsl(217, 61%, 90%);
+  color: #1a1a1a;
+}
+body.light .header {
+  background: hsl(0, 0%, 100%);
+  color: #1a1a1a;
+}
+body.light #theme-toggle {
+  background-color: hsl(217, 61%, 90%);
+  color: #1a1a1a;
+}
+body.light .filters button {
+  background: hsl(0, 0%, 100%);
+  color: #1a1a1a;
+}
+body.light .filters button:hover {
+  background: hsl(217, 61%, 80%);
+}
+body.light .filters button.active {
+  background: hsl(3, 71%, 56%);
+  color: #000000;
+}
+body.light .remove-btn {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+body.light .extension {
+  background: hsl(200, 60%, 99%);
+  border: 1px solid hsl(217, 61%, 80%);
+}
+
+/* Attribution */
+.attribution {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .header, .header2 {
+    max-width: 100vw;
+    padding: 12px;
+    margin-top: 0;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+  }
+  .header2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .filters {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .extensions-list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 18px;
+    padding: 0 6px;
+  }
+  .extension {
+    padding: 18px 12px;
+    border-radius: 14px;
+  }
+  .extension img {
+    width: 38px;
+    height: 38px;
+  }
+  .remove-btn {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+}
+
+.filters button,
+.remove-btn,
+.switch {
+  min-height: 40px;
+  font-size: 1rem;
+}
+body {
+  overflow-x: hidden;
+}
