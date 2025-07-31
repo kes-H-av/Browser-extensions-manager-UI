@@ -64,9 +64,6 @@ In future updates, I plan to:
 - [JavaScript Info - DOM Events](https://javascript.info/introduction-browser-events)
 - [Frontend Mentor Community](https://www.frontendmentor.io/community)
 
-## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourhandle](https://twitter.com/yourhandle)
 
 
