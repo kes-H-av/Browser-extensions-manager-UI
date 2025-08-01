@@ -82,7 +82,7 @@ document.querySelectorAll('.filters button').forEach(button => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     body.classList.add('light');
-    themeIcon.src = '/assets/images/icon-moon.svg';
+    themeIcon.src = 'assets/images/icon-moon.svg';
   }
 
   themeToggle.addEventListener('click', () => {
